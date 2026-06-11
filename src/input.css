@@ -45,7 +45,6 @@
         radial-gradient(500px 280px at 22% 58%, rgba(230, 50, 119, 0.88), transparent 0%),
         radial-gradient(640px 280px at 50% 60%, rgba(255,255,255,0.95), rgba(255,255,255,0) 40%),
         linear-gradient(90deg, rgba(245,234,187,0.9), rgba(255,255,255,0.02));
-    filter: blur(6px) saturate(1.05);
     z-index: 0;
     pointer-events: none;
 }
@@ -206,33 +205,103 @@
     @apply bg-gray-100 text-black;
 }
 
+/* dark mode styles */
 html.dark {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #ededed;
 }
 
+html.dark .btn{
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* overlay and general white backgrounds */
+html.dark #mobile-menu,
 html.dark .bg-white {
-    background-color: black;
+    background-color: #000;
 }
 
-html.dark .text-black {
+/* hardcoded black bg buttons like Sign Up and Deploy */
+html.dark .bg-black {
+    background-color: #ededed;
+    color: #000;
+}
+
+/* borders */
+html.dark .border-gray-300 {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* gray texts */
+html.dark .text-gray-600,
+html.dark .footer-link,
+html.dark .footer-heading {
+    color: #a1a1a1;
+}
+
+/* dark text */
+html.dark .deploy-text{
     color: white;
 }
 
-html.dark .text-white {
-    color: black;
+html.dark .text-gray-500 {
+    color: #888;
 }
 
-html.dark #mobile-menu {
-    background-color: black;
+/* hover states */
+html.dark .hover\:bg-gray-100:hover,
+html.dark .hover\:bg-gray-800:hover {
+    background-color: #1a1a1a;
 }
 
+/* footer */
+html.dark .footer-badge {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #a1a1a1;
+}
+
+/* theme toggle */
 html.dark .theme-toggle {
-    background-color: black;
-    border-color: rgba(255,255,255,0.2);
+    background-color: #000;
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 html.dark .theme-toggle-btn-active {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: #1a1a1a;
+    color: #ededed;
+}
+
+html.dark .theme-toggle-btn {
+    color: #888;
+}
+
+/* close button in overlay */
+html.dark .bg-gray-200 {
+    background-color: #1a1a1a;
+}
+
+/* SVG logos with hardcoded fill="black" */
+html.dark .lucide-triangle,
+html.dark .footer-logo {
+    fill: #ededed;
+}
+
+html.dark .lucide-triangle-hero{
+    fill: black;
+}
+
+html.dark .section {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .footer {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .footer-bottom {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .menu-theme-toggle {
+    border-color: rgba(255, 255, 255, 0.15);
 }
