@@ -27,7 +27,7 @@
 .prism-section{
     position: relative;
     width: 100%;
-    min-height: 25vh;
+    min-height: 26vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,16 +35,17 @@
     z-index: 0;
 }
 
-.prism-section::before{
+.prism-section::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(500px 250px at 18% 18%, rgba(252, 190, 55, 0.92), transparent 30%),
-        radial-gradient(500px 250px at 82% 28%, rgba(50, 209, 230, 0.88), transparent 30%),
-        radial-gradient(500px 280px at 22% 58%, rgba(230, 50, 119, 0.88), transparent 0%),
-        radial-gradient(640px 280px at 50% 60%, rgba(255,255,255,0.95), rgba(255,255,255,0) 40%),
-        linear-gradient(90deg, rgba(245,234,187,0.9), rgba(255,255,255,0.02));
+        radial-gradient(400px 200px at 15% 20%, rgba(255, 80, 80, 0.7), transparent 60%),
+        radial-gradient(400px 200px at 85% 20%, rgba(100, 80, 255, 0.7), transparent 60%),
+        radial-gradient(350px 200px at 30% 60%, rgba(255, 200, 0, 0.65), transparent 55%),
+        radial-gradient(350px 200px at 70% 60%, rgba(0, 200, 255, 0.65), transparent 55%),
+        radial-gradient(300px 180px at 50% 40%, rgba(0, 220, 120, 0.5), transparent 50%),
+        radial-gradient(500px 300px at 50% 80%, rgba(255, 255, 255, 0.6), transparent 50%);
     z-index: 0;
     pointer-events: none;
 }
