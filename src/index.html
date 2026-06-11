@@ -32,7 +32,7 @@
         <button class="border border-gray-300 rounded-md px-1.5 py-1 text-sm">
           Ask AI
         </button>
-        <button class="menu rounded-full border border-gray-300 p-1">
+        <button id="menu-btn" class="menu rounded-full border border-gray-300 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -52,6 +52,80 @@
         </button>
       </nav>
     </header>
+
+    <!-- drop down menu(for mobile) -->
+     <!-- Fullscreen Overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col px-4 py-3">
+  
+  <!-- overlay header -->
+  <div class="flex justify-end items-center ">
+    <button id="close-menu-btn" class="rounded-full border border-gray-300 bg-gray-200 p-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"/>
+        <path d="m6 6 12 12"/>
+      </svg>
+    </button>
+  </div>
+
+    <!-- login and sign up buttons -->
+    <div class="flex flex-col gap-2 py-4 font-medium">
+      <a href="#" class="text-center text-sm px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800">Sign Up</a>
+      <a href="#" class="text-center text-sm px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100">Log In</a>
+     
+    </div>
+
+  <!-- nav links -->
+  <nav class="flex flex-col gap-1 mt-4 pb-4">
+    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
+      <a href="#" class="px-2 text-lg">Products</a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
+      <a href="#" class="px-2  text-lg">Solutions</a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
+      <a href="#" class="px-2  text-lg">Resources</a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    
+    <a href="#" class="px-2 py-2 text-lg rounded-lg hover:bg-gray-100 text-gray-600 ">Pricing</a>
+    <a href="#" class="px-2 py-2 text-lg rounded-lg hover:bg-gray-100 text-gray-600">Contact</a>
+  </nav>
+
+  <!-- theme toggle -->
+  <div class="menu-theme-toggle flex justify-between items-center border-t border-b border-gray-300 py-7 px-2">
+    <a href="#" class="text-lg text-gray-600">
+      Theme
+    </a>
+
+    <div class="theme-toggle" role="group" aria-label="Select a display theme">
+      <button type="button" class="theme-toggle-btn" aria-label="System theme" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="14" x="2" y="3" rx="2"/>
+          <line x1="8" x2="16" y1="21" y2="21"/>
+          <line x1="12" x2="12" y1="17" y2="21"/>
+        </svg>
+      </button>
+      <button type="button" class="theme-toggle-btn theme-toggle-btn-active" aria-label="Light theme" aria-pressed="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/><path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/><path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+      </button>
+      <button type="button" class="theme-toggle-btn" aria-label="Dark theme" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
 
     <!-- page body -->
     <div class="page-body">
@@ -516,5 +590,8 @@
         </div>
       </div>
     </footer>
+    
+    <!-- adding javascript -->
+     <script src="./script.js"></script>
   </body>
 </html>
