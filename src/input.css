@@ -205,3 +205,34 @@
 .theme-toggle-btn-active {
     @apply bg-gray-100 text-black;
 }
+
+html.dark {
+    background-color: black;
+    color: white;
+}
+
+html.dark .bg-white {
+    background-color: black;
+}
+
+html.dark .text-black {
+    color: white;
+}
+
+html.dark .text-white {
+    color: black;
+}
+
+html.dark #mobile-menu {
+    background-color: black;
+}
+
+html.dark .theme-toggle {
+    background-color: black;
+    border-color: rgba(255,255,255,0.2);
+}
+
+html.dark .theme-toggle-btn-active {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
