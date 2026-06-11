@@ -31,6 +31,12 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -218,6 +224,16 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .btn {
+    display: flex;
+    cursor: pointer;
+    border-radius: var(--radius-3xl);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-300);
+    padding: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 4);
+  }
   .section {
     display: flex;
     flex-direction: column;
@@ -227,18 +243,15 @@
     border-width: 1px;
     border-color: var(--color-gray-300);
     padding-block: calc(var(--spacing) * 5);
-  }
-  .btn {
-    display: flex;
-    border-radius: var(--radius-3xl);
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    border-color: var(--color-gray-300);
-    padding: calc(var(--spacing) * 2);
-    padding-inline: calc(var(--spacing) * 4);
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 9);
+    }
   }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -257,6 +270,9 @@
   }
   .w-\[65vw\] {
     width: 65vw;
+  }
+  .w-\[180px\] {
+    width: 180px;
   }
   .w-full {
     width: 100%;
@@ -299,6 +315,9 @@
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
+  }
+  .self-end {
+    align-self: flex-end;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -347,17 +366,8 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
-  .px-1 {
-    padding-inline: calc(var(--spacing) * 1);
-  }
-  .px-1\.5 {
-    padding-inline: calc(var(--spacing) * 1.5);
-  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-2\.5 {
-    padding-inline: calc(var(--spacing) * 2.5);
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
@@ -394,6 +404,9 @@
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
@@ -477,17 +490,167 @@
       }
     }
   }
+  .max-md\:w-\[65vw\] {
+    @media (width < 48rem) {
+      width: 65vw;
+    }
+  }
+  .sm\:w-\[200px\] {
+    @media (width >= 40rem) {
+      width: 200px;
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:justify-center {
+    @media (width >= 40rem) {
+      justify-content: center;
+    }
+  }
+  .sm\:px-12 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+  .sm\:py-11 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 11);
+    }
+  }
+  .sm\:py-20 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 20);
+    }
+  }
+  .sm\:pt-15 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 15);
+    }
+  }
+  .sm\:text-2xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:col-span-1 {
+    @media (width >= 48rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:w-\[55\%\] {
+    @media (width >= 48rem) {
+      width: 55%;
+    }
+  }
+  .md\:w-\[65\%\] {
+    @media (width >= 48rem) {
+      width: 65%;
+    }
+  }
+  .md\:w-\[75\%\] {
+    @media (width >= 48rem) {
+      width: 75%;
+    }
+  }
+  .md\:w-\[220px\] {
+    @media (width >= 48rem) {
+      width: 220px;
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:pt-18 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 18);
+    }
+  }
+  .md\:pb-18 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 18);
+    }
+  }
+  .md\:text-2xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .md\:text-4xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .md\:text-5xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
 }
 @layer base {
   body {
     padding: 0 1rem;
   }
+  @media (min-width: 760px) {
+    .page-body {
+      padding: 0 20rem;
+    }
+  }
+}
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.btn.bg-black:hover {
+  background-color: #333;
+}
+html.dark .btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+html.dark .btn.bg-black:hover {
+  background-color: #ededed;
+  color: #000;
 }
 .landing-page {
   position: relative;
-  max-height: 70vh;
   overflow: hidden;
-  padding: 3rem 0 4rem 0;
+  padding: 3rem 0 0;
 }
 .prism-section {
   position: relative;
@@ -498,6 +661,8 @@
   justify-content: center;
   margin-top: 2rem;
   z-index: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .prism-section::before {
   content: "";
@@ -534,8 +699,6 @@
   margin-top: 2rem;
 }
 .prism-svg {
-  width: min(360px, 36vw);
-  max-width: 520px;
   height: auto;
   filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
 }

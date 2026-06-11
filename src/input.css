@@ -4,22 +4,47 @@
     body{
         padding: 0 1rem;
     }
+
+    @media (min-width: 760px){
+        .page-body{
+            padding: 0 20rem
+        }
+    }
 }
 
 @utility btn{
-    @apply rounded-3xl flex p-2 px-4 border border-gray-300;
+    @apply rounded-3xl flex p-2 px-4 border border-gray-300 cursor-pointer md:text-md;
+}
+
+/* outline button (default) */
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* filled black button */
+.btn.bg-black:hover {
+    background-color: #333;
+}
+
+/* dark mode */
+html.dark .btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .btn.bg-black:hover {
+    background-color: #ededed;
+    color: #000;
 }
 
 @utility section {
-    @apply py-5 flex flex-col items-center gap-3 border border-gray-300
+    @apply py-5 sm:py-9 flex flex-col items-center gap-3 border border-gray-300
 }
 
 /* Minimal additions: background gradient and prism helpers only */
 .landing-page{
     position: relative;
-    max-height: 70vh;
     overflow: hidden;
-    padding: 3rem 0 4rem 0;
+    padding: 3rem 0 0;
 }
 
 
@@ -33,6 +58,8 @@
     justify-content: center;
     margin-top: 2rem;
     z-index: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .prism-section::before {
@@ -85,10 +112,9 @@
 }
 
 .prism-svg{
-    width: min(360px, 36vw);
-    max-width: 520px;
     height: auto;
     filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+    
 }
 
 
