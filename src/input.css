@@ -90,3 +90,124 @@
     height: auto;
     filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
 }
+
+.footer {
+    @apply mt-10 border-t border-gray-300 pt-8 pb-6;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2.5rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 3rem 2rem;
+    }
+}
+
+.footer-heading {
+    @apply mb-3 text-xs font-semibold uppercase tracking-wide text-gray-500;
+}
+
+.footer-links {
+    @apply flex flex-col gap-1.5 list-none p-0 m-0;
+}
+
+.footer-link {
+    @apply block text-sm leading-snug text-gray-600 no-underline transition-colors;
+}
+
+.footer-link:hover {
+    @apply text-black;
+}
+
+.footer-link-icon {
+    @apply flex items-center gap-2;
+}
+
+.footer-badge {
+    @apply ml-1 inline-block rounded border border-gray-300 px-1 py-px text-[10px] font-medium uppercase tracking-wide text-gray-600 align-middle;
+}
+
+.footer-logo-column {
+    display: flex;
+    align-items: flex-start;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .footer-logo-column {
+        grid-column: auto;
+        justify-content: flex-end;
+    }
+}
+
+.footer-logo {
+    width: clamp(36px, 5vw, 48px);
+    height: auto;
+}
+
+.footer-bottom {
+    @apply mt-8 pt-6 border-t border-gray-300 flex flex-col gap-4;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        @apply flex-row items-center justify-between;
+    }
+}
+
+.footer-status {
+    @apply flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-blue-600 no-underline;
+}
+
+.status-dot {
+    @apply inline-block w-2 h-2 shrink-0 rounded-full bg-blue-500;
+}
+
+.theme-toggle {
+    @apply flex w-fit items-center gap-0.5 rounded-full border border-gray-300 p-1 bg-white;
+}
+
+.theme-toggle-btn {
+    @apply flex items-center justify-center w-8 h-8 rounded-full text-gray-500 bg-transparent border-0 cursor-pointer transition-colors;
+}
+
+.theme-toggle-btn:hover {
+    @apply text-black;
+}
+
+.theme-toggle-btn-active {
+    @apply bg-gray-100 text-black;
+}
