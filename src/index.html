@@ -76,18 +76,57 @@
 
   <!-- nav links -->
   <nav class="flex flex-col gap-1 mt-4 pb-4">
-    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
-      <a href="#" class="px-2 text-lg">Products</a>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-    </div>
-    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
+    <!-- Products nav link -->
+     <div>
+        <div 
+        onclick="toggleDropdown('products')" 
+        class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg cursor-pointer"
+        >
+          <a href="#" class="px-2 text-lg">Products</a>
+          <svg id="chevron-products" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+
+        <div id="dropdown-products" class="hidden flex-col gap-1 pl-4 pb-2">
+          <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">AI Infrastructure</a>
+          <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Rendering</a>
+          <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Observability</a>
+          <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Security</a>
+        </div>
+     </div>
+  
+
+    <!-- Solutions nav link -->
+   <div>
+      <div 
+        onclick="toggleDropdown('solutions')" 
+        class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg cursor-pointer"
+       >
       <a href="#" class="px-2  text-lg">Solutions</a>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+      <svg id="chevron-solutions" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
     </div>
-    <div class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg">
+    <div id="dropdown-solutions" class="hidden flex-col gap-1 pl-4 pb-2">
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Startups</a>
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Enterprise</a>
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Agencies</a>
+    </div>
+   </div>
+
+    <!-- Resources -->
+   <div>
+    <div 
+      onclick="toggleDropdown('resources')" 
+      class="py-2.5 flex justify-between hover:bg-gray-100 text-gray-600 rounded-lg cursor-pointer">
       <a href="#" class="px-2  text-lg">Resources</a>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+      <svg id="chevron-resources" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
     </div>
+    <div id="dropdown-resources" class="hidden flex-col gap-1 pl-4 pb-2">
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Blog</a>
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Changelog</a>
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Docs</a>
+      <a href="#" class="px-2 py-2 text-base text-gray-500 rounded-lg hover:bg-gray-100">Templates</a>
+    </div>
+
+   </div>
     
     <a href="#" class="px-2 py-2 text-lg rounded-lg hover:bg-gray-100 text-gray-600 ">Pricing</a>
     <a href="#" class="px-2 py-2 text-lg rounded-lg hover:bg-gray-100 text-gray-600">Contact</a>
