@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base{
+    body{
+        padding: 0 1rem;
+    }
+}
+
+@utility btn{
+    @apply rounded-3xl flex p-2 px-4 border border-gray-300;
+}
+
+@utility section {
+    @apply py-5 flex flex-col items-center gap-3 border border-gray-300
+}
+
+/* Minimal additions: background gradient and prism helpers only */
+.landing-page{
+    position: relative;
+    max-height: 70vh;
+    overflow: hidden;
+    padding: 3rem 0 4rem 0;
+}
+
+
+/* Prism section receives the gradient + subtle grid overlay as a child of landing-page */
+.prism-section{
+    position: relative;
+    width: 100%;
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    z-index: 0;
+}
+
+.prism-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(500px 250px at 18% 18%, rgba(252, 190, 55, 0.92), transparent 30%),
+        radial-gradient(500px 250px at 82% 28%, rgba(50, 209, 230, 0.88), transparent 30%),
+        radial-gradient(500px 280px at 22% 58%, rgba(230, 50, 119, 0.88), transparent 0%),
+        radial-gradient(640px 280px at 50% 60%, rgba(255,255,255,0.95), rgba(255,255,255,0) 40%),
+        linear-gradient(90deg, rgba(245,234,187,0.9), rgba(255,255,255,0.02));
+    filter: blur(6px) saturate(1.05);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* grid overlay element sits above the gradient but behind the prism */
+.prism-grid{
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* above ::before (0) and below .prism-wrap (2) */
+    pointer-events: none;
+    background-image:
+        linear-gradient(to right, rgba(0,0,0,0.06) 1px, rgba(255,255,255,0) 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, rgba(255,255,255,0) 1px);
+    /* 8 columns horizontally, 4 rows vertically */
+    background-size: calc(100% / 8) 100%, 100% calc(100% / 4);
+    opacity: 0.5;
+}
+
+.prism-section::after{
+    /* keep a subtle overall tint if desired (very faint) */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.prism-wrap{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.prism-svg{
+    width: min(360px, 36vw);
+    max-width: 520px;
+    height: auto;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+}
